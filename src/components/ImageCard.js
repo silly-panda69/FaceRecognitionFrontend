@@ -5,7 +5,7 @@ const ImageCard = () => {
   return (
     <>
         <div className="imagecard">
-        <div className="container">
+        <div className="card-container">
             <h3>John Doe</h3>
         </div>
         <img className="image" src={avatar} alt="Avatar"/>
