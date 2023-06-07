@@ -258,6 +258,19 @@ body {
     font-size: 2rem;
   }
 
+  .navbar .navlist{
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #1f4162;
+    top: var(--nav-height);
+    right: 0%;
+    text-align: center;
+
+    transition: .5s;
+  }
+  
   .navbar .navlist li {
     padding: 1rem;
     width: 100%;
@@ -283,27 +296,13 @@ body {
     border-radius: 0;
   }
 
-  .navbar .navlist{
-    overflow-y: scroll;
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: var(--nav-height);
-    left: 0%;
-    text-align: center;
-
-    transition: all .3s;
-  }
-
   /* Making Home page contents responsive */
   #home-heading {
     margin: 6vw 0 4vw 0;
     font-size: 8vw;
     text-align: center;
   }
-  
+
   .home-para {
     font-size: 5vw;
     margin: 0 0 2vw 0;
@@ -318,7 +317,7 @@ body {
     margin: 3vw 5vw;
     height: 15vw;
     width: 75vw;
-    
+
     font-size: 5vw;
   }
 

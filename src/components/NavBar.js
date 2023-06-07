@@ -20,28 +20,24 @@ const NavBar = () => {
         const dispHam = window.getComputedStyle(ham[0]).getPropertyValue("display")
         
         const navlist = document.getElementsByClassName("navlist")
-        if (dispHam === "none") {
-            navlist[0].style.display="block";
-        }
-        else {
-            navlist[0].style.display="none";
+        if (dispHam !== "none") {
+            navlist[0].style.left = "100%";
         }
     }
 
     function onClickMenu() {
         const navlist = document.getElementsByClassName("navlist")
-        const dispNavlist = window.getComputedStyle(navlist[0]).getPropertyValue("display")
 
-        if (dispNavlist === "none") {
-            navlist[0].style.display="block";
-            const body = document.getElementsByTagName("body");
-            body[0].style.overflowY = "hidden";
-        }
-        else {
-            navlist[0].style.display="none";
+        if (navlist[0].style.left === "0%") {
+            navlist[0].style.left = "100%";
             const body = document.getElementsByTagName("body");
             body[0].style.overflowY = "auto";
-        } 
+        }
+        else {
+            navlist[0].style.left = "0%";
+            const body = document.getElementsByTagName("body");
+            body[0].style.overflowY = "hidden";          
+        }
     }
 
     useEffect(() => {
