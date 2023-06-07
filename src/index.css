@@ -1,0 +1,337 @@
+:root {
+    --nav-height: 3.0rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url(./components/backgroundVerticaledit.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background: #ffa805;
+    height: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 1vw;
+
+    transition: .3s;
+}
+
+.logo:hover {
+    text-shadow: 4px 4px 4px #595553;
+    transition: .3s;
+}
+
+.hidden_ham {
+    display: none;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0 3vw;
+    cursor: pointer;
+
+    float: right;
+
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.ham_image {
+    object-fit: cover;
+    height: 100%;
+}
+
+.navbar .navlist {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navlist li {
+    margin: 0 0.8vw;
+}
+
+.navbar .navlist li a {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.navbar .navlist a:hover {
+    text-shadow: 4px 4px 4px #595553;
+    transition: .3s;
+}
+
+.login-button {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    height: 3rem;
+    background-color: white;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+    border-radius: 3rem / 2.5rem;
+
+    transition: .3s;
+}
+
+.login-button:hover {
+    box-shadow: 3px 3px 3px #808080;
+    transition: .3s;
+}
+
+.nav-space {
+    height: var(--nav-height);
+}
+
+#home-heading {
+    font-family: sans-serif;
+    font-weight: 800;
+    margin: 3vw 0 2vw 0;
+    font-size: 4.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-shadow: 3px 3px 3px #b5b5b5;
+}
+
+.home-para {
+    font-size: 1.6vw;
+    font-weight: 600;
+    margin: 0 0 0 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #363636;
+
+    text-shadow: 3px 3px 3px #dadada;
+}
+
+.input-options {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.op-button {
+    margin: 1vw 5vw;
+    height: 5vw;
+    width: 25vw;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #ffeaca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto auto;
+    border-radius: 1rem;
+    
+    font-family: sans-serif;
+    font-size: 1.8vw;
+    font-weight: 800;
+
+}
+
+.start-button {
+    margin: 1vw 5vw;
+    height: 3.5vw;
+    width: 12vw;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #ffa805;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto auto;
+    border-radius: 15rem;
+
+    font-family: sans-serif;
+    font-size: 1.8vw;
+    font-weight: 1000;
+    color: #ffffff;
+}
+
+.button-shadow {
+    box-shadow: 8px 8px 8px #e3e3e3;
+    transition: .3s;
+}
+
+.button-shadow:hover {
+    box-shadow: 8px 8px 8px #a2a2a2;
+    transition: .3s;
+}
+
+.imagecard {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+    width: 15rem;
+    height: auto;
+    border-radius: 5%;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    /* Adjust the max-width of the card as desired */
+    max-width: 50%;
+}
+
+.card-container {
+    /* Add some padding inside the card container */
+    padding: 2px 16px;
+    font-size: 1rem;
+    flex-grow: 1;
+    margin: 0.5vh;
+
+    font-weight: 700;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.imagecard:hover {
+    /* On mouse-over, add a deeper shadow */
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.606);
+}
+
+@media (max-width: 1000px) {
+    .navbar .navlist li a {
+        font-size: 0.7rem;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+
+    .login-button {
+        height: 2rem;
+        font-size: 0.7rem;
+
+        padding-right: 0.8rem;
+        padding-left: 0.8rem;
+    }
+}
+
+@media (max-width: 700px) {
+
+    /* Making navbar responsive */
+    .hidden_ham {
+        display: block;
+    }
+
+    .navbar .logo {
+        font-size: 2rem;
+    }
+
+    .navbar .navlist {
+        overflow-y: scroll;
+        position: fixed;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+        background: #1f4162;
+        top: var(--nav-height);
+        right: 0%;
+        text-align: center;
+
+        transition: .5s;
+    }
+
+    .navbar .navlist li {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .navbar .navlist li a {
+        font-size: 1.5rem;
+    }
+
+    .navbar .navlist li a:hover {
+        background: none;
+        color: #ffa227;
+        text-shadow: 1px 1px 1px #ffffff;
+    }
+
+    .login-button {
+        height: 3rem;
+        width: 100%;
+        font-size: 1.5rem;
+
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+        border-radius: 0;
+    }
+
+    /* Making Home page contents responsive */
+    #home-heading {
+        margin: 6vw 0 4vw 0;
+        font-size: 8vw;
+        text-align: center;
+    }
+
+    .home-para {
+        font-size: 5vw;
+        margin: 0 0 2vw 0;
+        text-align: center;
+    }
+
+    .input-options {
+        flex-direction: column;
+    }
+
+    .op-button {
+        margin: 3vw 5vw;
+        height: 15vw;
+        width: 75vw;
+
+        font-size: 5vw;
+    }
+
+    .start-button {
+        margin: 3vw 5vw;
+        height: 10vw;
+        width: 25vw;
+
+        font-size: 4vw;
+    }
+}
