@@ -270,7 +270,7 @@ body {
 
     transition: .5s;
   }
-
+  
   .navbar .navlist li {
     padding: 1rem;
     width: 100%;
@@ -296,36 +296,36 @@ body {
     border-radius: 0;
   }
 
-    /* Making Home page contents responsive */
-    #home-heading {
-      margin: 6vw 0 4vw 0;
-      font-size: 8vw;
-      text-align: center;
-    }
-    
-    .home-para {
-      font-size: 5vw;
-      margin: 0 0 2vw 0;
-      text-align: center;
-    }
+  /* Making Home page contents responsive */
+  #home-heading {
+    margin: 6vw 0 4vw 0;
+    font-size: 8vw;
+    text-align: center;
+  }
 
-    .input-options {
-      flex-direction: column;
-    }
+  .home-para {
+    font-size: 5vw;
+    margin: 0 0 2vw 0;
+    text-align: center;
+  }
 
-    .op-button {
-      margin: 3vw 5vw;
-      height: 15vw;
-      width: 75vw;
-      
-      font-size: 5vw;
-    }
+  .input-options {
+    flex-direction: column;
+  }
 
-    .start-button {
-      margin: 3vw 5vw;
-      height: 10vw;
-      width: 25vw;
+  .op-button {
+    margin: 3vw 5vw;
+    height: 15vw;
+    width: 75vw;
 
-      font-size: 4vw;
-    }
+    font-size: 5vw;
+  }
+
+  .start-button {
+    margin: 3vw 5vw;
+    height: 10vw;
+    width: 25vw;
+
+    font-size: 4vw;
+  }
 }
