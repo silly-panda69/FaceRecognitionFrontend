@@ -1,5 +1,9 @@
 import React from 'react';
-import ImageCard from './ImageCard'
+import ImageCard from '../components/ImageCard'
+import Browse from '../components/Browse';
+import TakePhoto from '../components/TakePhoto';
+import Sample from '../components/Sample';
+import FileList from '../components/FileList';
 
 function Home() {
   return (
@@ -12,12 +16,13 @@ function Home() {
       </div>
         <div>
           <div className="input-options">
-                <button className="op-button button-shadow">Browse/Upload</button>
-                <button className="op-button button-shadow">Take A Photo</button>
+                <Browse></Browse>
+                <TakePhoto></TakePhoto>
           </div>
           <div className="input-options">
-                <button className="op-button button-shadow">Choose From Samples</button>
+                <Sample></Sample>
           </div>
+          <FileList></FileList>
           <div className="input-options">
                 <button className="start-button button-shadow">START</button>
           </div>

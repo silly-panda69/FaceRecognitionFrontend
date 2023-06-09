@@ -1,16 +1,16 @@
 import React from 'react'
 import { useEffect } from 'react'
-import hamburger from './hamburger.png'
-
+import hamburger from '../assets/hamburger.png';
+import {Link} from 'react-router-dom';
 
 const NavBar = () => {
     function setNavSpaceHeight () {
     
-        const navbar = document.getElementsByClassName("navbar")
-        const navbarHeight = window.getComputedStyle(navbar[0]).getPropertyValue("height")
+        const navBar = document.getElementsByClassName("navBar")
+        const navBarHeight = window.getComputedStyle(navBar[0]).getPropertyValue("height")
     
         const root = document.documentElement
-        root.style.setProperty("--nav-height", `${navbarHeight}`)
+        root.style.setProperty("--nav-height", `${navBarHeight}`)
 
         hideMenu()
     }
@@ -48,13 +48,13 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className="navbar">
-                <a className="logo" href="/">Face Recognition</a>
+            <nav className="navBar">
+                <Link className="logo" to="/">Face Recognition</Link>
                 <ul className="navlist">
-                    <li><a href="/">Get Started</a></li>
-                    <li><a href="/">Contact Us</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><button className="login-button" style={{color: "#ffa805", textShadow: "none"}}>Login/SignUp</button></li>
+                    <li><Link to="/welcome">Get Started</Link></li>
+                    <li><Link to="/">Contact Us</Link></li>
+                    <li><Link to="/">About</Link></li>
+                    <li><Link to="/user"><button className="login-button" style={{color: "#ffa805", textShadow: "none"}}>Login/SignUp</button></Link></li>
                 </ul>
 
                 <button onClick={onClickMenu} className="hamburger hidden_ham">

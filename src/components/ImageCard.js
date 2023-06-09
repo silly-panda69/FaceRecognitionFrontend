@@ -1,5 +1,5 @@
 import React from 'react'
-import avatar from './img_avatar.png'
+import avatar from '../assets/img_avatar.png';
 
 const ImageCard = () => {
   return (

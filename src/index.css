@@ -12,13 +12,13 @@
 
 body {
     font-family: sans-serif;
-    background-image: url(./components/backgroundVerticaledit.jpg);
+    background-image: url(./assets/backgroundVerticaledit.jpg);
     background-repeat: no-repeat;
     background-size: 100vw;
     background-attachment: fixed;
 }
 
-.navbar {
+.navBar {
     background: #ffa805;
     height: auto;
     padding-top: 0.5rem;
@@ -31,7 +31,7 @@ body {
     justify-content: space-between;
 }
 
-.navbar .logo {
+.navBar .logo {
     color: #ffffff;
     font-size: 2.2rem;
     font-weight: 700;
@@ -47,6 +47,14 @@ body {
 
 .hidden_ham {
     display: none;
+}
+
+ul{
+    margin-bottom: 0;
+}
+
+a{
+    text-decoration: none;
 }
 
 .hamburger {
@@ -68,22 +76,22 @@ body {
     height: 100%;
 }
 
-.navbar .navlist {
+.navBar .navlist {
     display: flex;
     align-items: center;
 }
 
-.navbar .navlist li {
+.navBar .navlist li {
     margin: 0 0.8vw;
 }
 
-.navbar .navlist li a {
+.navBar .navlist li a {
     color: #ffffff;
     font-weight: 700;
     font-size: 1.1rem;
 }
 
-.navbar .navlist a:hover {
+.navBar .navlist a:hover {
     text-shadow: 4px 4px 4px #595553;
     transition: .3s;
 }
@@ -232,11 +240,11 @@ body {
 }
 
 @media (max-width: 1000px) {
-    .navbar .navlist li a {
+    .navBar .navlist li a {
         font-size: 0.7rem;
     }
 
-    .navbar .logo {
+    .navBar .logo {
         font-size: 1.5rem;
     }
 
@@ -251,16 +259,16 @@ body {
 
 @media (max-width: 700px) {
 
-    /* Making navbar responsive */
+    /* Making navBar responsive */
     .hidden_ham {
         display: block;
     }
 
-    .navbar .logo {
+    .navBar .logo {
         font-size: 2rem;
     }
 
-    .navbar .navlist {
+    .navBar .navlist {
         overflow-y: scroll;
         position: fixed;
 
@@ -277,16 +285,16 @@ body {
         transition: .5s;
     }
 
-    .navbar .navlist li {
+    .navBar .navlist li {
         padding: 1rem;
         width: 100%;
     }
 
-    .navbar .navlist li a {
+    .navBar .navlist li a {
         font-size: 1.5rem;
     }
 
-    .navbar .navlist li a:hover {
+    .navBar .navlist li a:hover {
         background: none;
         color: #ffa227;
         text-shadow: 1px 1px 1px #ffffff;
