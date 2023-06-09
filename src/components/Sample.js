@@ -1,12 +1,66 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import avatar from '../assets/img_avatar.png';
+import { FileContext } from "../context/FIleContext";
 
 const Sample = () => {
+    const dataId = [123, 234, 345, 456, 567];
+    const {data,dispatch}=useContext(FileContext);
     const [isLoading, setIsLoading] = useState(false);
     const [sampleData, setSampleData] = useState();
+    const [selectedData,setSelectedData]=useState([]);
     useEffect(() => {
-        //fetching data;
-    });
+        setSelectedData(selectedData);
+    },[selectedData]);
+    const handleValue=(index)=>{
+        var Arr;
+        if(selectedData){
+            const arrIndex=selectedData.indexOf(index);
+            if(arrIndex===-1){
+                // setSelectedData([index,...selectedData]);
+                Arr=[index,...selectedData];
+            }else if(arrIndex!==-1){
+                var indexData=[];
+                for(let i=0;i<selectedData.length;i++){
+                    if(selectedData[i]!==index){
+                        indexData.push(selectedData[i]);
+                    }
+                }
+                Arr=indexData;
+            }
+        }else{
+            Arr=[index];
+        }
+        setSelectedData(Arr);
+        setSampleData('');
+    }
+    const modalClose=()=>{
+        setSelectedData();
+    }
+    const doneData=()=>{
+        var ardata=[];
+        for(let i=0;i<selectedData.length;i++){
+            console.log()
+            ardata.push({name: dataId[selectedData[i]],data: '../assets/img_avatar.png'});
+        }
+        if(data===null){
+            dispatch({type: 'SET_FILES',payload: ardata});
+        }else if(data!==null){
+            dispatch({type: 'ADD_FILES',payload: ardata});
+        }
+        setSelectedData();
+    }
+    const indexCheck=(index)=>{
+        if(selectedData){
+            for(let i=0;i<selectedData.length;i++){
+                if(selectedData[i]===index){
+                    return true;
+                }
+            }
+            return false;
+        }else{
+            return false;
+        }
+    }
     return (
         <div>
             <div className="input-options">
@@ -23,45 +77,20 @@ const Sample = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className="d-flex shadow-sm rounded ps-2 pe-3 py-1 mb-2 align-items-center justify-content-between">
-                            <div className="d-flex align-items-center">
-                                <img height={"60px"} src={avatar} alt="sample" />
-                                <h4 className="m-0 ms-2">12345</h4>
-                            </div>
-                            <input type="checkbox" />
-                        </div>
-                        <div className="d-flex shadow-sm rounded ps-2 pe-3 py-1 mb-2 align-items-center justify-content-between">
-                            <div className="d-flex align-items-center">
-                                <img height={"60px"} src={avatar} alt="sample" />
-                                <h4 className="m-0 ms-2">12345</h4>
-                            </div>
-                            <input type="checkbox" />
-                        </div>
-                        <div className="d-flex shadow-sm rounded ps-2 pe-3 py-1 mb-2 align-items-center justify-content-between">
-                            <div className="d-flex align-items-center">
-                                <img height={"60px"} src={avatar} alt="sample" />
-                                <h4 className="m-0 ms-2">12345</h4>
-                            </div>
-                            <input type="checkbox" />
-                        </div>
-                        <div className="d-flex shadow-sm rounded ps-2 pe-3 py-1 mb-2 align-items-center justify-content-between">
-                            <div className="d-flex align-items-center">
-                                <img height={"60px"} src={avatar} alt="sample" />
-                                <h4 className="m-0 ms-2">12345</h4>
-                            </div>
-                            <input type="checkbox" />
-                        </div>
-                        <div className="d-flex shadow-sm rounded ps-2 pe-3 py-1 mb-2 align-items-center justify-content-between">
-                            <div className="d-flex align-items-center">
-                                <img height={"60px"} src={avatar} alt="sample" />
-                                <h4 className="m-0 ms-2">12345</h4>
-                            </div>
-                            <input type="checkbox" />
-                        </div>
+                        {dataId.map((item, index) => {
+                            return (
+                                <div onClick={()=>{handleValue(index)}}  key={index} className={(indexCheck(index))?"selectedSample d-flex shadow-sm rounded ps-2 pe-3 py-1 mb-2 align-items-center justify-content-between":"unselectedSample d-flex shadow-sm rounded ps-2 pe-3 py-1 mb-2 align-items-center justify-content-between"}>
+                                    <div className="d-flex align-items-center">
+                                        <img height={"60px"} src={avatar} alt="sample" />
+                                        <h4 className="m-0 ms-3">{item}</h4>
+                                    </div>
+                                </div>
+                            )
+                        })}
                         <div className="pt-2">
-                                <button className="btn btn-sm btn-danger" data-bs-dismiss="modal">Cancel</button>
-                                <span className="mx-2"></span>
-                                <button className="btn btn-sm btn-success" data-bs-dismiss="modal">Done</button>
+                            <button className="btn btn-sm btn-danger" onClick={modalClose} data-bs-dismiss="modal">Cancel</button>
+                            <span className="mx-2"></span>
+                            <button className="btn btn-sm btn-success" onClick={doneData} data-bs-dismiss="modal">Done</button>
                         </div>
                     </div>
                 </div>

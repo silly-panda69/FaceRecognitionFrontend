@@ -31,6 +31,14 @@ body {
     justify-content: space-between;
 }
 
+.selectedSample{
+    border: 3px solid #ffa805;
+    background-color: #ffeaca;
+}
+.unselectedSample{
+    border: 3px solid white;
+}
+
 .navBar .logo {
     color: #ffffff;
     font-size: 2.2rem;
