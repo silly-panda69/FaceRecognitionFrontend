@@ -24,6 +24,10 @@ const NavBar = () => {
         if (dispHam !== "none") {
             navlist[0].style.left = "100%";
         }
+        else {
+            const body = document.getElementsByTagName("body");
+            body[0].style.overflowY = "auto";
+        }
     }
 
     //When the sidebar in mobile view is hidden and hamburger is clicked, then sidebar appears
