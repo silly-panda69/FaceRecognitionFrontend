@@ -29,7 +29,7 @@ export const imgFilesReducer=(state,action)=>{
 
 export const FileContextProvider = (props) => {
     const [imgFiles,dispatch]=useReducer(imgFilesReducer,{
-        data: null,
+        data: [],
     });
     return (
         <FileContext.Provider value={{...imgFiles,dispatch}}>

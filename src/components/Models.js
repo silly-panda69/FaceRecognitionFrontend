@@ -8,10 +8,9 @@ import ModelElement from './ModelElement'
 //     name: ""
 // }
 
-const Models = () => {
+const Models = ({selectedModels,setSelectedModels}) => {
 
     const [modelArray, setModelArray] = useState([])
-    const [selectedModels, setSelectedModels] = useState([])
 
     useEffect(() => {
         //start of setting Sample models

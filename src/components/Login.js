@@ -12,7 +12,7 @@ const Login = () => {
             btnRef.current.style.left="0px";
         }else if(current===false){
             setToggle(false);
-            btnRef.current.style.left="121px";
+            btnRef.current.style.left="143px";
         }
         setError();
         setFcpassword();
@@ -38,8 +38,8 @@ const Login = () => {
         console.log({email: femail,password: fpassword});
     }
     return (
-        <div className="mt-5 pt-5 d-flex  justify-content-center align-items-center container-fluid">
-            <div className="d-flex gap-2 shadow rounded rounded-3 flex-column align-items-center bg-light p-4">
+        <div className="btn-wrapper-super mt-4 pb-5 pt-5 d-flex justify-content-center align-items-center container-fluid">
+            <div  className="d-flex gap-2 shadow rounded rounded-3 flex-column align-items-center bg-light p-4">
                 {!toggle && <h4>Signup</h4>}
                 {toggle && <h4>Login</h4>}
                 <div className="d-flex flex-column gap-3">

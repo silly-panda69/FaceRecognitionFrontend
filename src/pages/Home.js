@@ -1,16 +1,39 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ImageCard from '../components/ImageCard'
 import Browse from '../components/Browse';
 import TakePhoto from '../components/TakePhoto';
 import Sample from '../components/Sample';
 import FileList from '../components/FileList';
 import Models from '../components/Models';
+import Loader from '../components/Loader';
+import Toast from '../components/Toast';
+import { FileContext } from '../context/FIleContext';
+import * as bootstrap from 'bootstrap';
 
 function Home() {
-
-  const [isMobile, setIsMobile] = useState(false)
-
+  const toastRef=useRef(null);
+  const [toastMsg,setToastMsg]=useState();
+  const openToast=()=>{
+    const toastBs=bootstrap.Toast.getOrCreateInstance(toastRef.current);
+    toastBs.show();
+  }
+  const [isMobile, setIsMobile] = useState(false);
+  const [selectedModels, setSelectedModels] = useState([]);
+  const {data}=useContext(FileContext);
+  const handleClick=()=>{
+    if(data.length===0){
+      setToastMsg('At least one file must be selected !');
+      openToast();
+    }
+    else if(selectedModels.length===0){
+      setToastMsg('At least one model must be selected')
+      openToast();
+    }
+    else{
+      console.log(data,selectedModels);
+    }
+  }
   //Detects operating system of the client
   function getMobileOperatingSystem() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -62,12 +85,17 @@ function Home() {
           <Sample></Sample>
         </div>
         <FileList></FileList>
-        <Models></Models>
+        <Models selectedModels={selectedModels} setSelectedModels={setSelectedModels}></Models>
         <div className="input-options">
-          <button className="start-button button-shadow">START</button>
+          <button onClick={handleClick} className="start-button button-shadow">START</button>
         </div>
       </div>
-      <ImageCard></ImageCard>
+      <Toast
+      toastRef={toastRef}
+      msg={toastMsg}
+      ></Toast>
+      <Loader></Loader>
+      {/* <ImageCard></ImageCard> */}
     </>
   );
 }
