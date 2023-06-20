@@ -1,11 +1,11 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import ImageCard from '../components/ImageCard'
 import Browse from '../components/Browse';
 import TakePhoto from '../components/TakePhoto';
 import Sample from '../components/Sample';
 import FileList from '../components/FileList';
 import Models from '../components/Models';
+import OutputImagesBox from '../components/OutputImagesBox';
 
 function Home() {
 
@@ -67,7 +67,8 @@ function Home() {
           <button className="start-button button-shadow">START</button>
         </div>
       </div>
-      <ImageCard></ImageCard>
+      
+      <OutputImagesBox></OutputImagesBox>
     </>
   );
 }
