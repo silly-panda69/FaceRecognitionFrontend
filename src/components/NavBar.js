@@ -24,6 +24,10 @@ const NavBar = () => {
         if (dispHam !== "none") {
             navlist[0].style.left = "100%";
         }
+        else {
+            const body = document.getElementsByTagName("body");
+            body[0].style.overflowY = "auto";
+        }
     }
 
     //When the sidebar in mobile view is hidden and hamburger is clicked, then sidebar appears
@@ -58,6 +62,7 @@ const NavBar = () => {
 
         //trigger the navspace height on the page load and whenever the viewport gets resized
         setNavSpaceHeight()
+        hideMenu()
         window.addEventListener("resize", ()=> {
             setNavSpaceHeight()
             hideMenu()

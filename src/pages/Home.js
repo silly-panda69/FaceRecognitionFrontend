@@ -10,6 +10,7 @@ import Loader from '../components/Loader';
 import Toast from '../components/Toast';
 import { FileContext } from '../context/FIleContext';
 import * as bootstrap from 'bootstrap';
+import OutputImagesBox from '../components/OutputImagesBox';
 
 function Home() {
   const toastRef=useRef(null);
@@ -96,6 +97,7 @@ function Home() {
       ></Toast>
       <Loader></Loader>
       {/* <ImageCard></ImageCard> */}
+      <OutputImagesBox></OutputImagesBox>
     </>
   );
 }
