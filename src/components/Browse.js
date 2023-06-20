@@ -80,7 +80,7 @@ const Browse = () => {
                 }
             }
         }
-        if(data===null){
+        if(data.length===0){
             dispatch({type: 'SET_FILES',payload: fileNew});
         }else if(data!==null){
             dispatch({type: 'ADD_FILES',payload: fileNew});

@@ -53,7 +53,7 @@ const TakePhoto = () => {
         startCamera();
     }
     const DoneTakingPic=()=>{
-        if(data===null){
+        if(data.length===0){
             dispatch({type: 'SET_FILES',payload: [{name: 'Captured',data: camData}]});
         }else if(data!==null){
             dispatch({type: 'ADD_FILES',payload: {name: 'Captured ('+photNum+')',data: camData}});
