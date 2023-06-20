@@ -58,6 +58,7 @@ const NavBar = () => {
 
         //trigger the navspace height on the page load and whenever the viewport gets resized
         setNavSpaceHeight()
+        hideMenu()
         window.addEventListener("resize", ()=> {
             setNavSpaceHeight()
             hideMenu()
